@@ -1,81 +1,68 @@
-# WebApp boilerplate with React JS and Flask API
+# Calendar Aliquindoi
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+## Description
 
-- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+This project is a simple, efficient, and user-friendly calendar application. It lets users track their appointments, meetings, and events.
 
-### 1) Installation:
+## Installation
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node
+### Local
+1. Clone the repository: `git clone https://github.com/Paulmak21/Calendar-Alikindoi.git`
+2. Navigate to the project directory: `cd Calendar-Alikindoi`
+3. Install the dependencies: `npm install`
+4. Install backend dependencies: `pipenv install`
 
-It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+## Usage 
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+After installation, you can start the application with `npm start`. You will also need the back-end starting it with `pipenv run start` This will start the server and the application will be accessible at `http://localhost:3000`.
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+## Features
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+- Create, update, and delete events synchronized with Todoist.
+- Set reminders for events
+- Pomodoro Widget
+- Share events with others
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+## Screenshots
 
-### Undo a migration
+Here are some screenshots of the Calendar Aliquindoi application in action:
 
-You are also able to undo a migration by running
+### Main Page
 
-```sh
-$ pipenv run downgrade
-```
+![Screenshot from 2024-02-15 12-19-37](https://github.com/Paulmak21/Calendar-Alikindoi/assets/140537985/c8ab3030-a748-431a-9fe6-69125a47c918)
 
-### Backend Populate Table Users
+This is the main page of the application. Here you can see your calendar and all your events.
 
-To insert test users in the database execute the following command:
+### Event Creation
 
-```sh
-$ flask insert-test-users 5
-```
+![Screenshot from 2024-02-15 12-20-18](https://github.com/Paulmak21/Calendar-Alikindoi/assets/140537985/4f54c2fc-93b0-4f88-a4a5-dd29f5731ed3)
 
-And you will see the following message:
+This screenshot shows the event creation form. You can set the event name, date, and time, and synchronize it with Todoist.
 
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
+### Pomodoro Widget
 
-### **Important note for the database and the data inside it**
+![Screenshot from 2024-02-15 12-21-09](https://github.com/Paulmak21/Calendar-Alikindoi/assets/140537985/e2fd3cb3-6af0-4c60-ad1a-78efa064b504)
 
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
+The Pomodoro Widget helps you manage your time effectively using the Pomodoro Technique.
 
-### Front-End Manual Installation:
+### Transactions
 
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
+In Calendar Aliquindoi, transactions play a crucial role in ensuring data integrity and consistency. When you initiate a transaction, such as creating, updating, or sharing an event, the application ensures that all the necessary steps are completed successfully. If any step fails, the transaction is rolled back, and no changes are made. This ensures that your data remains consistent and accurate at all times.
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
+This screenshot illustrates a typical transaction process in the application.
 
-## Publish your website!
+![Screenshot from 2024-02-15 12-25-42](https://github.com/Paulmak21/Calendar-Alikindoi/assets/140537985/b51b9fdc-6aa1-4b61-9b42-1eea27d60d7a)
+![Screenshot from 2024-02-15 12-22-48](https://github.com/Paulmak21/Calendar-Alikindoi/assets/140537985/7dad0532-d9c5-4759-8b45-81aaf0bb550e)
+![Screenshot from 2024-02-15 12-25-47](https://github.com/Paulmak21/Calendar-Alikindoi/assets/140537985/689a4c76-065f-4ed9-a56d-c6e855df1900)
 
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
+## Even more
 
-### Contributors
+You can enjoy these features and more check the app at: [Calendar-Alquindoi](https://sample-service-name-gn1r.onrender.com)
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+## Contributing
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+Contributions are welcome!
+
+## Contact
+
+If you have any questions, please do not hesitate to contact me at paulgrozescu@gmail.com
